@@ -1,5 +1,6 @@
 package org.example;
 
+import Problem1.Credentials;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

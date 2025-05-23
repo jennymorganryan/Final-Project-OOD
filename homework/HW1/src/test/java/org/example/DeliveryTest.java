@@ -1,11 +1,14 @@
 package org.example;
 
+import Problem2.Delivery;
+import Problem2.Time;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class DeliveryTest {
+    private Delivery delivery;
 
     @BeforeEach
     void setUp() {
@@ -68,5 +71,4 @@ class DeliveryTest {
         delivery.setEndTime(newEnd);
         assertEquals(1, delivery.getEndTime().getHour());
     }
-}
 }

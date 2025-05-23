@@ -1,16 +1,19 @@
 package org.example;
 
+import Problem2.Time;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class TimeTest {
+    private Time time;
 
     @BeforeEach
     void setUp() {
-        time = Time.fromSeconds(1 * 3600 + 30 * 60 + 45);
+        time = Time.fromSeconds( 3600 + 30 * 60 + 45);
     }
+
     @Test
     void testGetHour() {
         assertEquals(1, time.getHour());
@@ -54,5 +57,4 @@ class TimeTest {
         assertEquals(59, maxTime.getMinute());
         assertEquals(59, maxTime.getSecond());
     }
-}
 }

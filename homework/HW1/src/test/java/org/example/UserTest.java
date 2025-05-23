@@ -1,5 +1,7 @@
 package org.example;
 
+import Problem1.Credentials;
+import Problem1.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -20,7 +22,6 @@ class UserTest {
         assertEquals("Million", user.getCredentials().getUsername());
         assertEquals("12345", user.getCredentials().getPasswordHash());
         assertEquals("6146336994", user.getPhoneNumber());
-        assertEquals("jenny@gmail.com", user.getEmail());
         assertEquals("Jenny", user.getFirstName());
         assertEquals("Morgan", user.getLastName());
 

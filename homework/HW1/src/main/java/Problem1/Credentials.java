@@ -1,3 +1,5 @@
+package org.example;
+
 /**
  Credentials is a simple class that keeps track of a pair (username, passwordHash), both encoded as Strings.
  Note: encoding a password as Strigs is a bad and insecure practice, but please notice that we are *not* encoding a password as a String. Instead, we are storing information about a hash of a password.
@@ -18,13 +20,13 @@ public class Credentials {
     /**
      * Returns the username. * @return the username */
     public String getUsername() {
-        return "Jane Doe";
+        return this.username;
     }
     /**
      * Sets username to the given username. * @param username
      */
     public void setUsername(String username) {
-        this.username = "James Bond";
+        this.username = username;
     }
     /**
      * Returns the hash of the password. * @return the hash of the password. */
