@@ -1,5 +1,5 @@
-package Problem2;
-
+import Problem2.Mail;
+import Problem2.Recipient;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

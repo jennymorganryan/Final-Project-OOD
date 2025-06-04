@@ -1,6 +1,8 @@
+package Problem1;
+
 import java.time.LocalDate;
 
-public class Schedule {
+public class Schedule extends Event {
     private BrunchEvent brunch;
     private DinnerEvent dinner;
     private LocalDate date;
@@ -28,10 +30,11 @@ public class Schedule {
     }
 
     public LocalDate getDate() {
-        return date;
+        return this.date;
     }
 
     public DinnerEvent getDinner() {
         return dinner;
     }
+
 }

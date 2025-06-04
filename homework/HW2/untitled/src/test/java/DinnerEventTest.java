@@ -1,4 +1,3 @@
-package Problem1;
 import Problem1.DinnerEvent;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

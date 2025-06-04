@@ -1,4 +1,5 @@
-package Problem1;
+import Problem1.BrunchEvent;
+import Problem1.Event;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
