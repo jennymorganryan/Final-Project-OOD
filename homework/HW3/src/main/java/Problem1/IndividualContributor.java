@@ -8,8 +8,8 @@ public class IndividualContributor extends FullTimeEmployee {
     private int numberOfExternalPublications;
 
 
-    public IndividualContributor(ContactInfo contactInfo, EducationLevel educationLevel, String employeeID, LocalDate employmentDate, EmploymentLevel employmentLevel, Double lastYearSalary, Double estimatedProductivity, double basePay, double bonuses, LocalDate lastPromotion, int numberOfProjects, double overTime, int numberOfExternalPublications, int numberOfPatents, int numberOfPublications) {
-        super(contactInfo, educationLevel, employeeID, employmentDate, employmentLevel, lastYearSalary, estimatedProductivity, basePay, bonuses, lastPromotion, numberOfProjects, overTime);
+    public IndividualContributor(ContactInfo contactInfo, EducationLevel educationLevel, String employeeID, LocalDate employmentDate, EmploymentLevel employmentLevel, Double lastYearSalary, double basePay, double bonuses, LocalDate lastPromotion, int numberOfProjects, double overTime, int numberOfExternalPublications, int numberOfPatents, int numberOfPublications) {
+        super(contactInfo, educationLevel, employeeID, employmentDate, employmentLevel, lastYearSalary, basePay, bonuses, lastPromotion, numberOfProjects, overTime);
         this.numberOfExternalPublications = numberOfExternalPublications;
         this.numberOfPatents = numberOfPatents;
         this.numberOfPublications = numberOfPublications;

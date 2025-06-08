@@ -5,8 +5,8 @@ import java.time.LocalDate;
 public class Manager extends FullTimeEmployee {
     private int employeesManaged;
 
-    public Manager(ContactInfo contactInfo, EducationLevel educationLevel, String employeeID, LocalDate employmentDate, EmploymentLevel employmentLevel, Double lastYearSalary, Double estimatedProductivity, double basePay, double bonuses, LocalDate lastPromotion, int numberOfProjects, double overTime, int employeesManaged) {
-        super(contactInfo, educationLevel, employeeID, employmentDate, employmentLevel, lastYearSalary, estimatedProductivity, basePay, bonuses, lastPromotion, numberOfProjects, overTime);
+    public Manager(ContactInfo contactInfo, EducationLevel educationLevel, String employeeID, LocalDate employmentDate, EmploymentLevel employmentLevel, Double lastYearSalary, double basePay, double bonuses, LocalDate lastPromotion, int numberOfProjects, double overTime, int employeesManaged) {
+        super(contactInfo, educationLevel, employeeID, employmentDate, employmentLevel, lastYearSalary, basePay, bonuses, lastPromotion, numberOfProjects, overTime);
         this.employeesManaged = employeesManaged;
     }
 
