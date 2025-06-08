@@ -40,6 +40,11 @@ class IndividualContributorTest {
 
     @Test
     void estimateProductivity() {
+        //expected:
+        // 80000.0 / 40000.0 > lastYearSalary / basePay = base productivity (earned more than base salary)
+        // + 1.3 > bonus for having more than 4 publications
+        // + 1.4 > bonus for being at INTERMEDIATE employment level
+        // - 0.8 > penalty for last promotion being over 3 years ago
         double expected = 80000.0 / 40000.0 + 1.3 + 1.4 - 0.8;
         double result = individualContributor.estimateProductivity();
         assertEquals(expected, result, 0.001);

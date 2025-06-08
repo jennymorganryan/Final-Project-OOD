@@ -38,6 +38,11 @@ class ManagerTest {
 
     @Test
     void estimateProductivity() {
+        //expected:
+        // 100000.0 / 60000.0 > lastYearSalary / basePay = base productivity (earned more than base salary)
+        // + 1.8 > bonus for managing more than 8 employees
+        // + 1.4 > bonus for being at INTERMEDIATE employment level
+        // - 0.8 > penalty for last promotion being more than 3 years ago
         double expected = 100000.0 / 60000.0 + 1.8 + 1.4 - 0.8;
         double result = manager.estimateProductivity();
         assertEquals(expected, result, 0.001);

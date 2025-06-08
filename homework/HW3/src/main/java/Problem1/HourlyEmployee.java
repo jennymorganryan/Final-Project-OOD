@@ -35,6 +35,7 @@ public class HourlyEmployee extends PartTimeEmployee {
     public double getHourlyEarnings() {
         return hourlyEarnings;
     }
+
     @Override
     public double estimateProductivity() {
         double estimatedProductivity =  (double) (((double) this.hourlyHoursWorked / this.contractHours) * 3.7);

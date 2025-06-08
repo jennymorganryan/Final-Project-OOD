@@ -31,6 +31,10 @@ class BenefitsEligibleEmployeeTest {
     @Test
     void estimateProductivity() {
         double result = employee.estimateProductivity();
+        //expected:
+        // (10.0 / 10.0) > actualHoursWorked / contractHours = 10 hours worked out of 10 expected hours
+       // * 3.7 > base multiplier for all part-time employees
+       // + 1.4 > bonus for being at INTERMEDIATE employment level
         double expected = (10.0 / 10.0) * 3.7 + 1.4;
         assertEquals(expected, result, 0.001);
     }
