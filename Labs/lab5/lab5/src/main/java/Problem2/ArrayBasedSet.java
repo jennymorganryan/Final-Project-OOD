@@ -1,5 +1,8 @@
 package Problem2;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class ArrayBasedSet implements Set{
 
     private Integer[] set;
@@ -19,7 +22,6 @@ public class ArrayBasedSet implements Set{
         this.copyArray(this.set, newSetSize);
         return newSet;
     }
-    //todo equals override
 //todo
     private void copyArray(Integer[] fromSet, Integer[] toSet) {
         for (int i = 0; i < fromSet.length ; i++) {
@@ -74,5 +76,16 @@ public class ArrayBasedSet implements Set{
         return this;
     }
 
-    //helper copy method
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        ArrayBasedSet that = (ArrayBasedSet) o;
+        return setSize == that.setSize && Objects.deepEquals(set, that.set);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(Arrays.hashCode(set), setSize);
+    }
+//helper copy method
 }
