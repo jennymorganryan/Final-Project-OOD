@@ -88,7 +88,7 @@ public abstract class AbstractCharacter implement Character {
     public Double getWeight() {
         return weight;
     }
-    public Double estimateCaptureLiklihood() {
+    public Double estimateCaptureLikelihood() {
         //todo
         return 0.0;
     }

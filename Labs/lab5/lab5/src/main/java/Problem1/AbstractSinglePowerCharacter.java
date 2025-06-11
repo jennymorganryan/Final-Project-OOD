@@ -9,6 +9,7 @@ public abstract class AbstractSinglePowerCharacter extends AbstractCharacter{
     private static final int ATTACK_NUM_CUTOFF = 5;
     private static final Double SINGLE_POWER_CHARACTER_CAPTURE_DECREASE = 0.7;
     private static final long DAYS_TO_SUBTRACT = 14;
+    private static final Double LAST_BATTLE_CAPTURE_INCREASE = 1.3;
     protected String[] attacks;
     protected Double  valueOfStrongestAttack;
     protected LocalDate dateofLastBattle;
@@ -29,7 +30,7 @@ public abstract class AbstractSinglePowerCharacter extends AbstractCharacter{
     //todo override
 
     private Double calculateLastBattleIncrease() {
-        LocalDate dateCuttoff = LocalDate.now().minusDays(DAYS_TO_SUBTRACT);
+        LocalDate dateCutoff = LocalDate.now().minusDays(DAYS_TO_SUBTRACT);
         if(this.getDateofLastBattle().isAfter(dateCutoff))
             return 1.0;
         else return LAST_BATTLE_CAPTURE_INCREASE;
@@ -46,7 +47,7 @@ public abstract class AbstractSinglePowerCharacter extends AbstractCharacter{
     public Double getValueOfStrongestAttack() {
         return valueOfStrongestAttack;
     }
-    public Double estimateCaptureLiklihood() {
+    public Double estimateCaptureLikelihood() {
         Double baseRate = super.estimateCaptureLikelihood();
         Double modifier = 1.0;
 
