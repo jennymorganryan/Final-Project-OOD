@@ -37,8 +37,8 @@ public abstract class Employee {
      *
      * @return the double
      */
-
     public abstract double estimateProductivity();
+
 
     /**
      * Gets contact info.

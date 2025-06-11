@@ -1,4 +1,6 @@
 package Problem1;
 
-public class CaptureRateCalculationException {
+public class CaptureRateCalculationException extends Throwable {
+    public CaptureRateCalculationException(String s) {
+    }
 }
