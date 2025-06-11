@@ -9,7 +9,7 @@ public class WaterPowerCharacter extends AbstractSinglePowerCharacter {
     }
 
     @Override
-    public Double estimateCaptureLiklihood() {
+    public Double estimateCaptureLikelihood() {
         //todo
         return 0.0;
     }

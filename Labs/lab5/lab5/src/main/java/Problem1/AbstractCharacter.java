@@ -90,7 +90,7 @@ public abstract class AbstractCharacter implement Character {
     }
     public Double estimateCaptureLiklihood() {
         //todo
-        return 0.0
+        return 0.0;
     }
     private Double calculateBaseCaptureRate () throws CaptureRateCalculationException {
         if (this.healthLevel > 0) {

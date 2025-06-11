@@ -13,6 +13,9 @@ public abstract class AbstractMultiPowerCharacter extends AbstractCharacter{
         this.primaryPower = primaryPower;
         this.specialAbilities = specialAbilities;
     }
+    public String[] getAttack() {
+        return valueOfStrongestAttack;
+    }
 
     public String getPrimaryPower() {
         return primaryPower;
@@ -22,8 +25,14 @@ public abstract class AbstractMultiPowerCharacter extends AbstractCharacter{
         return specialAbilities;
     }
     public Double estimateCaptureLiklihood() {
-        //todo
-        return 0.0;
+      return super.estimateCaptureLiklihood() * this.calculateSinglePowerCaptureDecrease();
+        }
+    }
+
+    private Double calculateSinglePowerCaptureDecrease() {
+        if (this.getAttacks().length >= ATTACK_NUM_CUTOFF) {
+            return SINGLE_POWER_CHARACTER_CAPTURE_DECREASE;
+        }
     }
 
     @Override

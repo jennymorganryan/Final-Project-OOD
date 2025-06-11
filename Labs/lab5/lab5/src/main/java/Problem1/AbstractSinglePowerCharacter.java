@@ -29,8 +29,10 @@ public abstract class AbstractSinglePowerCharacter extends AbstractCharacter{
     //todo override
 
     private Double calculateLastBattleIncrease() {
-        LocaDate dateCuttoff = LocalDate.now().minusDays(DAYS_TO_SUBTRACT)
-        if(this.getDateofLastBattle().)
+        LocalDate dateCuttoff = LocalDate.now().minusDays(DAYS_TO_SUBTRACT);
+        if(this.getDateofLastBattle().isAfter(dateCutoff))
+            return 1.0;
+        else return LAST_BATTLE_CAPTURE_INCREASE;
     }
 
     public String[] getAttacks() {
@@ -45,9 +47,19 @@ public abstract class AbstractSinglePowerCharacter extends AbstractCharacter{
         return valueOfStrongestAttack;
     }
     public Double estimateCaptureLiklihood() {
-        //todo
-        //return super.
-        return 0.0;
+        Double baseRate = super.estimateCaptureLikelihood();
+        Double modifier = 1.0;
+
+        if (this.attacks.length > ATTACK_NUM_CUTOFF) {
+            modifier *= SINGLE_POWER_CHARACTER_CAPTURE_DECREASE;
+        }
+
+        if (this.dateofLastBattle != null &&
+                this.dateofLastBattle.isAfter(LocalDate.now().minusDays(DAYS_TO_SUBTRACT))) {
+            modifier *= 1.3;
+        }
+
+        return baseRate * modifier;
     }
 
     @Override
