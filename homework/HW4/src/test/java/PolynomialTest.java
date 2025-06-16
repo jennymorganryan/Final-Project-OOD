@@ -46,8 +46,8 @@ class PolynomialTest {
     @Test
     void add() throws ZeroException {
             Polynomial other = new Polynomial();
-            other.addTerm(5, 'x', 2);  // combines with 8x^2 → 13x^2
-            other.addTerm(4, 'z', 3);  // new term
+            other.addTerm(5, 'x', 2);
+            other.addTerm(4, 'z', 3);
 
             Polynomial result = polynomial.add(other);
 
