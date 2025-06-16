@@ -15,51 +15,36 @@ class PolynomialTest {
     }
 
     @Test
-    void getDegree() {
-        try {
+    void getDegree() throws ZeroException {
             assertEquals(7, polynomial.getDegree());
-        } catch (ZeroException e) {
-            fail("Exception should not have been thrown");
-        }
     }
 
     @Test
-    void getCoefficient() {
-        try {
+    void getCoefficient() throws ZeroException {
             assertEquals(5, polynomial.getCoefficient(7));
             assertEquals(8, polynomial.getCoefficient(2));
             assertEquals(0, polynomial.getCoefficient(4));
-        } catch (ZeroException e) {
-            fail("Exception should not have been thrown");
-        }
     }
 
     @Test
-    void addTerm() {
-        try {
+    void addTerm() throws ZeroException {
             polynomial.addTerm(3, 'z', 4);
             assertEquals(3, polynomial.getCoefficient(4));
 
             polynomial.addTerm(2, 'x', 2);
             assertEquals(10, polynomial.getCoefficient(2));
-        } catch (ZeroException e) {
-            fail("Exception should not have been thrown");
-        }
+
     }
 
     @Test
-    void removeTerm() {
+    void removeTerm() throws ZeroException {
         polynomial.removeTerm(7);
-        try {
             assertEquals(0, polynomial.getCoefficient(7));
-        } catch (ZeroException e) {
-            fail("Exception should not have been thrown");
-        }
+
     }
 
     @Test
-    void add() {
-        try {
+    void add() throws ZeroException {
             Polynomial other = new Polynomial();
             other.addTerm(5, 'x', 2);  // combines with 8x^2 → 13x^2
             other.addTerm(4, 'z', 3);  // new term
@@ -69,9 +54,7 @@ class PolynomialTest {
             assertEquals(13, result.getCoefficient(2));
             assertEquals(5, result.getCoefficient(7));
             assertEquals(4, result.getCoefficient(3));
-        } catch (ZeroException e) {
-            fail("Exception should not have been thrown");
-        }
+
     }
 
     @Test
