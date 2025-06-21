@@ -3,11 +3,10 @@ package Problem2;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Catalog extends AbstractLibraryItem {
+public class Catalog {
     protected List<AbstractLibraryItem> items;
 
-    public Catalog(String title, int yearReleasedOrPublished, List<AbstractLibraryItem> items) {
-        super(title, yearReleasedOrPublished);
+    public Catalog(List<AbstractLibraryItem> items) {
         this.items = items;
     }
 
