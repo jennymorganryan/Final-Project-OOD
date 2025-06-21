@@ -21,6 +21,9 @@ public class Pledges extends DonationCreation {
      */
     public Pledges(int amount, LocalDate dateCreated, LocalTime timeCreated, DonationDate processingDate) {
         super(amount, dateCreated, timeCreated);
+        if (processingDate.getDateDonated().isBefore(dateCreated)) {
+            throw new IllegalArgumentException("Processing date cannot be before creation date");
+        }
         this.processingDate = processingDate;
     }
 
@@ -32,6 +35,19 @@ public class Pledges extends DonationCreation {
     public DonationDate getProcessingDate() {
         return processingDate;
     }
+
+    /**
+     * set the processing date.
+     *
+     * @return void
+     */
+    public void setProcessingDate(DonationDate newDate) {
+        if (newDate != null && newDate.getDateDonated().isBefore(dateCreated)) {
+            throw new IllegalArgumentException("Processing date cannot be before creation date.");
+        }
+        this.processingDate = newDate;
+    }
+
 
 
     @Override

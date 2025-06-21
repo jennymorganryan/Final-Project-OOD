@@ -18,11 +18,10 @@ public class MonthlyDonation extends DonationCreation {
      * @param amount      the amount as an int
      * @param dateCreated the date created as a local date
      * @param timeCreated the time created as a local time
-     * @param active      the active as a boolean
      */
-    public MonthlyDonation(int amount, LocalDate dateCreated, LocalTime timeCreated, boolean active) {
+    public MonthlyDonation(int amount, LocalDate dateCreated, LocalTime timeCreated) {
         super(amount, dateCreated, timeCreated);
-        this.active = active;
+        this.active = true;
     }
 
     /**
@@ -31,12 +30,11 @@ public class MonthlyDonation extends DonationCreation {
      * @param cancellationDate the cancellation date
      * @return the cancellation date
      */
-    public LocalDate setCancellationDate(LocalDate cancellationDate) {
+    public void setCancellationDate(LocalDate cancellationDate) {
         this.cancellationDate = cancellationDate;
         if (LocalDate.now().isAfter(cancellationDate) || LocalDate.now().isEqual(cancellationDate)) {
             this.active = false;
         }
-        return this.cancellationDate;
     }
 
     @Override
@@ -53,6 +51,14 @@ public class MonthlyDonation extends DonationCreation {
         }
 
         return total;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public LocalDate getCancellationDate() {
+        return cancellationDate;
     }
 
     @Override

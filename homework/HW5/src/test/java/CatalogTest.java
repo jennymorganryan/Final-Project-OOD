@@ -24,7 +24,6 @@ public class CatalogTest {
 
     @BeforeEach
     void setUp() {
-        // Creators
         audre = new Author("Audre", "Lorde");
         umi = new RecordingArtist("UMI", "");
         sol = new RecordingArtist("Sol", "Flower");

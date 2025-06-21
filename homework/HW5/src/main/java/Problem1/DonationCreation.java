@@ -8,8 +8,8 @@ import java.time.LocalTime;
 public abstract class DonationCreation {
 
     protected int amount = 0;
-    protected LocalDate dateCreated = LocalDate.now();
-    protected LocalTime timeCreated = LocalTime.now();
+    protected LocalDate dateCreated;
+    protected LocalTime timeCreated;
 
     /**
      * Instantiates a new Donation creation.
