@@ -20,7 +20,7 @@ public class TripReport {
      * @param speed    the speed as a float in miles per minutes
      * @param vehicle  the vehicle as a custome dat type vehicle
      */
-    public TripReport(Float distance, Integer duration, Float speed, Vehicle vehicle) {
+    public TripReport(  Vehicle vehicle, Float speed, Float distance, Integer duration) {
         this.distance = distance;
         this.duration = duration;
         this.speed = speed;
