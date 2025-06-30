@@ -184,10 +184,13 @@ public class PayrollSystem {
         return result;
     }
 
+// AI helped with this particular equals override!
     @Override
     public boolean equals(Object o) {
-        if (!(o instanceof PayrollSystem that)) return false;
-        return Objects.deepEquals(employees, that.employees) && Objects.equals(newEmployee, that.newEmployee);
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PayrollSystem that = (PayrollSystem) o;
+        return Arrays.equals(this.employees, that.employees);
     }
 
     @Override
