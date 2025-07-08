@@ -9,8 +9,12 @@ import Problem3.Event;
 import Problem3.Name;
 import Problem3.CustomerInfo;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 class EventsCatalogTest {
+    static EventsCatalog eventsCatalog;
+    private Event event1;
 
     @BeforeAll
     static void beforeAll() {
@@ -21,25 +25,28 @@ class EventsCatalogTest {
 
         CustomerInfo customerinfo = new CustomerInfo(sadie, "Snowy Creek Dr.", "Boston", "MA", "02120", "6146409287", "vicky@gmail.com");
 
-        Name[] team = new Name[];
+        Name[] team = new Name[0];
 
         Event event1 = new Event(599, "wedding", fred, team, customerinfo, LocalDate.now(), 20,6);
         Event event2 = new Event(700, "concert", vicky, team, customerinfo, LocalDate.now(), 60,6);
 
 
 
-        EventsCatalog eventsCatalog = new EventsCatalog(List.of(event1, event2));
+        eventsCatalog = new EventsCatalog(new Event[]{event1, event2});
 
     }
 
     @Test
     void findEventByID() {
-        for (int i = 0; i <  2; i++ ) {
-            if (eventsCatalog[i].get)
+        for (int i = 0; i < eventsCatalog.getEvents().length; i++) {
+            if (this.event1.getEventID() == 599) {
+
+            }
         }
     }
 
     @Test
     void countEvents() {
+        assertEquals(2, eventsCatalog.countEvents());
     }
 }
