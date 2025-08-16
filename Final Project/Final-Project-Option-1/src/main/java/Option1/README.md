@@ -6,6 +6,7 @@ Reads one day of RFID scan data and produces three CSV reports:
 - `skiers.csv`- top 100 skiers by total vertical (descending)
 - `lifts.csv` - rides per lift (1–40) for the whole day (ascending by lift id)
 - `hours.csv` - top 10 busiest lifts per hour (6 hours: 9am–3pm)
+- numbers are per-lift per-hour totals across all skiers
 
 __________________________________________________________________________________
 # How to Run
