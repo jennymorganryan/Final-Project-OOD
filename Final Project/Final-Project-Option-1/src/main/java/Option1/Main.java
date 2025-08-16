@@ -1,6 +1,17 @@
+package Option1;
+
 import java.nio.file.Path;
 
+/**
+ * This is where we accept command line arguments to run our program
+ */
 public class Main {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     * @throws Exception the exception
+     */
     public static void main(String[] args) throws Exception {
         //check args
         if (args.length < 2) {
@@ -12,7 +23,7 @@ public class Main {
         Path inputCsv = Path.of(args[0]);
         Path outputDir = Path.of(args[1]);
 
-        //build controller and helpers
+        //build controller and project classes
         AppController app = new AppController(
                 new CsvParser(),
                 new LiftData(),

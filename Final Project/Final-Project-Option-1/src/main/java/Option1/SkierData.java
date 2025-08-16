@@ -1,8 +1,9 @@
+package Option1;
+
 /**
- * Overview
  * This class keeps totals for one skier.
  * It stores how many rides they took and how many vertical meters they skied.
- * AppController keeps one of these per skier id.
+ * Option1.AppController keeps one of these per skier id.
  */
 public class SkierData {
 

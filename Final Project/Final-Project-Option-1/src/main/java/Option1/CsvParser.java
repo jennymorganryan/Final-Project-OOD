@@ -1,12 +1,4 @@
-/**
- *
- * This class opens the CSV file, reads the header to learn column names,
- * then reads each remaining line and turns it into a SkierRide object.
- *
- * Your file has these column names
- *   resort, day, skier, lift, time
- * The code below looks up those names in the header, so it does not care about order.
- */
+package Option1;
 import java.nio.file.Path;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,13 +8,24 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class CsvParser {
+/**
+ *
+ * This class opens the CSV file, reads the header to learn column names,
+ * then reads each remaining line and turns it into a Option1.SkierRide object.
+ *
+ * Your file has these column names
+ *   resort, day, skier, lift, time
+ * The code below looks up those names in the header, so it does not care about order.
+ */
+
+public class CsvParser implements Parser {
 
     /**
-     * Read the entire CSV file and return a list of SkierRide objects.
+     * Read the entire CSV file and return a list of Option1.SkierRide objects.
      * Works for a header with these names exactly:
      *   resort, day, skier, lift, time
      */
+    @Override
     public List<SkierRide> readAll(Path csvPath) throws IOException {
         List<SkierRide> out = new ArrayList<>();
 

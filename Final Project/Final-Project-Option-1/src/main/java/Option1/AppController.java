@@ -1,20 +1,5 @@
-/**
- *
- * This class runs the whole program from start to finish.
- * Steps
- *   1. read every line from the input CSV file into a list of SkierRide objects
- *   2. for each SkierRide update three things
- *        a. totals for that skier
- *        b. ride counts for that lift
- *        c. ride counts for that hour and lift
- *   3. sort and shape the results
- *   4. write three CSV files
- *
- * Where we store things
- *   perSkier is a Map from skierId to SkierData
- *   ridesPerLift is an array where index is the lift number
- *   ridesPerHourLift is a small table with 6 hours and 40 lifts
- */
+package Option1;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.io.IOException;
@@ -23,20 +8,37 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ *
+ * This class runs the whole program from start to finish.
+ * Steps
+ *   1. read every line from the input CSV file into a list of Option1.SkierRide objects
+ *   2. for each Option1.SkierRide update three things
+ *        a. totals for that skier
+ *        b. ride counts for that lift
+ *        c. ride counts for that hour and lift
+ *   3. sort and shape the results
+ *   4. write three CSV files
+ *
+ * Where we store things
+ *   perSkier is a Map from skierId to Option1.SkierData
+ *   ridesPerLift is an array where index is the lift number
+ *   ridesPerHourLift is a small table with 6 hours and 40 lifts
+ */
 public class AppController {
 
-    private final CsvParser parser;
+    private final Parser parser;
     private final LiftData liftData;
-    private final SkiersCsvOutput skiersOut;
-    private final LiftsCsvOutput liftsOut;
-    private final HoursCsvOutput hoursOut;
+    private final OutputWriter<List<Map.Entry<String, SkierData>>> skiersOut;
+    private final OutputWriter<List<int[]>> liftsOut;
+    private final OutputWriter<List<List<int[]>>> hoursOut;
 
     //all skiers live here during processing
     //the key is the skier id, the value is the running totals for that skier
     private final Map<String, SkierData> perSkier = new HashMap<>();
 
     //count rides per lift
-    //we make the array size 41 so we can use index 1 to 40 and ignore index 0
+    // array size is 41 so we can use index 1 to 40 and ignore index 0
     private final long[] ridesPerLift = new long[41];
 
     //count rides per hour per lift
@@ -44,11 +46,11 @@ public class AppController {
     //hour 0 covers 9 to 10, hour 1 covers 10 to 11, and so on
     private final int[][] ridesPerHourLift = new int[6][41];
 
-    public AppController(CsvParser parser,
+    public AppController(Parser parser,
                          LiftData liftData,
-                         SkiersCsvOutput skiersOut,
-                         LiftsCsvOutput liftsOut,
-                         HoursCsvOutput hoursOut) {
+                         OutputWriter<List<Map.Entry<String, SkierData>>> skiersOut,
+                         OutputWriter<List<int[]>> liftsOut,
+                         OutputWriter<List<List<int[]>>> hoursOut) {
         this.parser = parser;
         this.liftData = liftData;
         this.skiersOut = skiersOut;

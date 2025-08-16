@@ -1,10 +1,4 @@
-/**
- * Overview
- * This class writes skiers.csv.
- * The first line must be exactly
- *   SkierID, Vertical total
- * Then we write up to 100 rows for the skiers with the highest total vertical.
- */
+package Option1;
 import java.nio.file.Path;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -12,13 +6,22 @@ import java.io.BufferedWriter;
 import java.util.List;
 import java.util.Map;
 
-public class SkiersCsvOutput {
+
+/**
+ * This class writes skiers.csv.
+ * The first line must be exactly
+ *   SkierID, Vertical total
+ * Then we write up to 100 rows for the skiers with the highest total vertical.
+ */
+
+public class SkiersCsvOutput implements OutputWriter<List<Map.Entry<String, SkierData>>> {
 
     /**
      * Write the file at the given place
      * rows is a list of entries where the key is the skier id
      * and the value has the totals for that skier
      */
+    @Override
     public void write(Path file, List<Map.Entry<String, SkierData>> rows) throws IOException {
         //open the file to write text
         try (BufferedWriter w = Files.newBufferedWriter(file)) {

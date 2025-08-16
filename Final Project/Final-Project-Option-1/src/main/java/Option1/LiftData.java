@@ -1,5 +1,6 @@
+package Option1;
+
 /**
- * Overview
  * This class knows the vertical meters for each lift number.
  * Lifts 1 through 20 are 200 meters. Lifts 21 through 40 are 500 meters.
  * Other classes call getVerticalForLift to ask for the number for one lift.

@@ -1,5 +1,6 @@
+package Option1;
+
 /**
- * Overview
  * This class just holds one ride from the CSV file.
  * It stores exactly the five values from one row in the CSV.
  * Other classes read these values with the getter methods.

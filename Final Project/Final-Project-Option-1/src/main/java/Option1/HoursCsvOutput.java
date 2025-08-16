@@ -1,5 +1,11 @@
+package Option1;
+import java.nio.file.Path;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.io.BufferedWriter;
+import java.util.List;
+
 /**
- * Overview
  * This class writes hours.csv.
  * There are six sections, one for each hour of the ski day.
  * For each section we write two header lines
@@ -8,19 +14,15 @@
  * Then we write the ten busiest lifts for that hour.
  * We put a blank line between sections to make the file easier to read.
  */
-import java.nio.file.Path;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.io.BufferedWriter;
-import java.util.List;
 
-public class HoursCsvOutput {
+public class HoursCsvOutput implements OutputWriter<List<List<int[]>>> {
 
     /**
      * sections is a list with six items
      *   sections.get(h) returns a list for hour h
      *   each inner item is [liftId, ridesForThatHourAndLift]
      */
+    @Override
     public void write(Path file, List<List<int[]>> sections) throws IOException {
         try (BufferedWriter w = Files.newBufferedWriter(file)) {
             for (int i = 0; i < sections.size(); i++) {
