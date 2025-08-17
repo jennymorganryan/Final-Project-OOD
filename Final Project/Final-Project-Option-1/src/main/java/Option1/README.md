@@ -16,8 +16,6 @@ You must pass **two arguments**:
 2) the output folder (will be created if missing; e.g., `out`)
 
 # java -cp build/classes/java/main Main src/test/java/resources/ski_lift_data.csv out
-
-
 __________________________________________________________________________________
 # Final Project Report Code walk link
 __________________________________________________________________________________
